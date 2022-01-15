@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland",
                                     "Russia", "Spain", "UK", "US"].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
+    @State private var isAnimated = false
     var body: some View {
         ZStack {
             RadialGradient(stops: [
@@ -41,10 +42,10 @@ struct ContentView: View {
                         Button {
                             flagTapped(number)
                         } label: {
-                            Image(countries[number])
-                                .renderingMode(.original)
-                                .clipShape(Capsule())
-                                .shadow(radius: 5)
+                            FlagImageView(country: countries[number])
+                                .opacity(isAnimated && number != correctAnswer ? 0.25 : 1.0)
+                                .rotation3DEffect(isAnimated && number == correctAnswer ? .degrees(360) : .degrees(0),
+                                                  axis: (0, 1, 0))
                         }
                     }
                 }
@@ -68,6 +69,9 @@ struct ContentView: View {
         }
     }
     func flagTapped(_ number: Int) {
+        withAnimation {
+            isAnimated = true
+        }
         if number == correctAnswer {
             scoreTitle = "Correct"
             score += 1
@@ -75,9 +79,12 @@ struct ContentView: View {
             scoreTitle = "Wrong! That’s the flag of \(countries[number])"
             score = max(0, score-1)
         }
-        showingScore = true
+        DispatchQueue.main.asyncAfter(deadline: .now()+1.0, execute: {
+            showingScore = true
+        })
     }
     func askQuestion() {
+        isAnimated = false
         if questionCount == 0 {
             score = 0
         }
@@ -93,6 +100,7 @@ struct ContentView: View {
         scoreTitle = "Press Continue to restart"
         showingScore = true
         questionCount = 0
+        isAnimated = false
     }
 }
 

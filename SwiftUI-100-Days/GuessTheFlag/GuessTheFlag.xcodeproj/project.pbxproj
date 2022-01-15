@@ -14,6 +14,7 @@
 		FD795A72279137DB008AE934 /* GuessTheFlagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD795A71279137DB008AE934 /* GuessTheFlagTests.swift */; };
 		FD795A7C279137DB008AE934 /* GuessTheFlagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD795A7B279137DB008AE934 /* GuessTheFlagUITests.swift */; };
 		FD795A7E279137DB008AE934 /* GuessTheFlagUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD795A7D279137DB008AE934 /* GuessTheFlagUITestsLaunchTests.swift */; };
+		FD795A8C27921A39008AE934 /* FlagImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD795A8B27921A39008AE934 /* FlagImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		FD795A77279137DB008AE934 /* GuessTheFlagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuessTheFlagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD795A7B279137DB008AE934 /* GuessTheFlagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagUITests.swift; sourceTree = "<group>"; };
 		FD795A7D279137DB008AE934 /* GuessTheFlagUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FD795A8B27921A39008AE934 /* FlagImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				FD795A60279137D9008AE934 /* GuessTheFlagApp.swift */,
 				FD795A62279137D9008AE934 /* ContentView.swift */,
+				FD795A8B27921A39008AE934 /* FlagImageView.swift */,
 				FD795A64279137DA008AE934 /* Assets.xcassets */,
 				FD795A66279137DA008AE934 /* Preview Content */,
 			);
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD795A63279137D9008AE934 /* ContentView.swift in Sources */,
+				FD795A8C27921A39008AE934 /* FlagImageView.swift in Sources */,
 				FD795A61279137D9008AE934 /* GuessTheFlagApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
