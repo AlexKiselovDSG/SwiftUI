@@ -19,14 +19,16 @@ struct ContentView: View {
                     .labelsHidden()
                 VStack{
                     Text("Fruits")
-                    List(fruits, id: \.self) { fruit in
+                    ForEach(fruits, id: \.self) { fruit in
                         Button(action: {
                             selectedFruit = fruit
                             isActive = true
                             print(fruit)
                         }, label: {
                             Text(fruit)
+                                .frame(width: 200)
                         })
+                            .buttonStyle(.borderedProminent)
                         
                     }
                 }
